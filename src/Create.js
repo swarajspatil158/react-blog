@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('Shubham');
+    const [author, setAuthor] = useState('Swaraj');
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
 
@@ -14,7 +14,7 @@ const Create = () => {
 
         setIsPending(true);
 
-        fetch('http://localhost:8000/blogs', {
+        fetch('http://localhost:3000/blogs', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)
@@ -46,9 +46,9 @@ const Create = () => {
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                 >
-                    <option value="Shubham">Shubham</option>
-                    <option value="Satyam">Satyam</option>
-                    <option value="Anmol">Anmol</option>
+                    <option value="Swaraj">Swaraj</option>
+                    <option value="Sarvesh">Sarvesh</option>
+                    <option value="Akash">Akash</option>
                 </select>
                 {!isPending && <button>Add Blog</button>}
                 {isPending && <button disabled>Adding Blog</button>}
